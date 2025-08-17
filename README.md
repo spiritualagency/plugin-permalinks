@@ -1,2 +1,1 @@
-# plugin-permalinks
-Create autoupdating permalinks of your WordPress hosted plugins.
+git clone https://github.com/<your-org>/<repo-name>.git
