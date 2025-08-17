@@ -1,0 +1,155 @@
+/* Admin Styles for Plugin */
+
+/* General admin wrapper styling */
+.plugin-admin-wrap {
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--wp-admin-theme-color-bg, #fff);
+    border: 1px solid var(--wp-admin-border-color, #ccd0d4);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+/* Headings */
+.plugin-admin-wrap h1,
+.plugin-admin-wrap h2,
+.plugin-admin-wrap h3 {
+    margin-top: 0;
+    color: var(--wp-admin-text-color, #23282d);
+    font-weight: 600;
+}
+
+/* Form elements */
+.plugin-admin-wrap label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.plugin-admin-wrap input[type="text"],
+.plugin-admin-wrap input[type="password"],
+.plugin-admin-wrap input[type="number"],
+.plugin-admin-wrap select,
+.plugin-admin-wrap textarea {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    border: 1px solid var(--wp-admin-border-color, #ccd0d4);
+    border-radius: 3px;
+    background-color: var(--wp-admin-theme-color-bg, #fff);
+    box-sizing: border-box;
+}
+
+.plugin-admin-wrap input[type="text"]:focus,
+.plugin-admin-wrap input[type="password"]:focus,
+.plugin-admin-wrap input[type="number"]:focus,
+.plugin-admin-wrap select:focus,
+.plugin-admin-wrap textarea:focus {
+    border-color: var(--wp-admin-theme-color, #007cba);
+    outline: 2px solid var(--wp-admin-theme-color, #007cba);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #007cba);
+}
+
+/* Buttons */
+.plugin-admin-wrap .button-primary {
+    background: var(--wp-admin-theme-color, #007cba);
+    border-color: var(--wp-admin-theme-color, #007cba);
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.plugin-admin-wrap .button-primary:hover,
+.plugin-admin-wrap .button-primary:focus {
+    background: var(--wp-admin-theme-color-darker-10, #006ba1);
+    border-color: var(--wp-admin-theme-color-darker-10, #006ba1);
+    color: #fff;
+}
+
+/* Notices */
+.plugin-admin-notice {
+    padding: 10px 15px;
+    margin: 0 0 15px;
+    border-left: 4px solid var(--wp-admin-theme-color, #007cba);
+    background-color: var(--wp-admin-notice-bg, #f1f1f1);
+}
+
+.plugin-admin-notice.success {
+    border-left-color: var(--wp-admin-success-color, #46b450);
+    background-color: var(--wp-admin-success-bg, #ecf9f1);
+}
+
+.plugin-admin-notice.error {
+    border-left-color: var(--wp-admin-error-color, #dc3232);
+    background-color: var(--wp-admin-error-bg, #fbeaea);
+}
+
+.plugin-admin-notice.warning {
+    border-left-color: var(--wp-admin-warning-color, #ffb900);
+    background-color: var(--wp-admin-warning-bg, #fff8e5);
+}
+
+/* Tables */
+.plugin-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.plugin-admin-table th,
+.plugin-admin-table td {
+    border: 1px solid var(--wp-admin-border-color, #ccd0d4);
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.plugin-admin-table th {
+    background-color: var(--wp-admin-table-header-bg, #f9f9f9);
+    font-weight: 600;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .plugin-admin-wrap input[type="text"],
+    .plugin-admin-wrap input[type="password"],
+    .plugin-admin-wrap input[type="number"],
+    .plugin-admin-wrap select,
+    .plugin-admin-wrap textarea {
+        font-size: 16px;
+    }
+
+    .plugin-admin-table thead {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+
+    .plugin-admin-table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid var(--wp-admin-border-light, #e1e1e1);
+    }
+
+    .plugin-admin-table td {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .plugin-admin-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        font-weight: bold;
+        text-align: left;
+        white-space: pre-wrap;
+    }
+}
